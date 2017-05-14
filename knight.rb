@@ -44,7 +44,7 @@ class Knight
 			end
 			@paths[cur_index].each do |path|
 				unless visited.include?(path)
-					queue << @grid[path].val unless visited.include?(path)
+					queue << @grid[path].val 
 					parent_relations[path] = cur_index
 				end
 			end
@@ -71,8 +71,8 @@ class Knight
 			map[i] = []
 			x, y = sq.val[0], sq.val[1]
 			potential_paths = [[x + 1, y + 2], [x + 2, y + 1], [x + 2, y - 1],
-					 		 [x + 1, y - 2], [x - 1, y - 2], [x - 2, y - 1],
-					     [x - 2, y + 1], [x - 1, y + 2]]
+					 		 					 [x + 1, y - 2], [x - 1, y - 2], [x - 2, y - 1],
+					     					 [x - 2, y + 1], [x - 1, y + 2]]
 			potential_paths.each do |path|
 				# Ensures we don't choose a path that goes off of the board
 				if (path[0] >= 0 && path[0] <= 7) && (path[1] >= 0 && path[1] <= 7)
